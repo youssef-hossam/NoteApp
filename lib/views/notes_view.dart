@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:noteapp/widgets/notes_view_body.dart';
 
+import '../widgets/add_note_bottom_sheet.dart';
+
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
 
@@ -23,14 +25,5 @@ class NotesView extends StatelessWidget {
           child: Icon(Icons.add),
         ),
         body: NotesViewBody());
-  }
-}
-
-class AddNoteBottomSheet extends StatelessWidget {
-  const AddNoteBottomSheet({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

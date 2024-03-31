@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:noteapp/views/edit_notes_view.dart';
 import 'package:noteapp/views/notes_view.dart';
 
 void main() {
@@ -19,6 +20,7 @@ class NoteApp extends StatelessWidget {
         theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
         debugShowCheckedModeBanner: false,
         home: const NotesView(),
+        routes: {"EditNote": (context) => EditNotesView()},
       ),
     );
   }
