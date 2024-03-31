@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:noteapp/views/edit_notes_view.dart';
 
 class CustomNoteItem extends StatelessWidget {
   const CustomNoteItem({
@@ -11,7 +12,7 @@ class CustomNoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, 'EditNote');
+        Navigator.pushNamed(context, EditNotesView.id);
       },
       child: Container(
         padding:

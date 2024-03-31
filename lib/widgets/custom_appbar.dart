@@ -4,10 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'custom_search_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({
-    super.key,
-  });
-
+  const CustomAppBar({super.key, required this.icon});
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -20,7 +18,7 @@ class CustomAppBar extends StatelessWidget {
             fontSize: 32.sp,
           ),
         ),
-        CustomSearchIcon(),
+        CustomSearchIcon(icon: icon),
       ],
     );
   }

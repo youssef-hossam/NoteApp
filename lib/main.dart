@@ -20,7 +20,7 @@ class NoteApp extends StatelessWidget {
         theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
         debugShowCheckedModeBanner: false,
         home: const NotesView(),
-        routes: {"EditNote": (context) => EditNotesView()},
+        routes: {EditNotesView.id: (context) => EditNotesView()},
       ),
     );
   }

@@ -4,11 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../constant.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton({
+  const CustomButton({
+    super.key,
     required this.text,
   });
 
-  String text;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Container(

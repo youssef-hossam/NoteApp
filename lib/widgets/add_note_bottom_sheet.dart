@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:noteapp/widgets/custom_button.dart';
-
-import '../constant.dart';
+import 'package:noteapp/widgets/custom_textfield.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({super.key});
@@ -14,30 +13,14 @@ class AddNoteBottomSheet extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 15.h, vertical: 30.h),
         child: Column(
           children: [
-            TextFormField(
-              decoration: InputDecoration(
-                hintText: "Title",
-                hintStyle: TextStyle(color: Kprimarycolor),
-                enabledBorder: buildBorder(),
-                border: buildBorder(),
-                focusedBorder: buildBorder(
-                  Color(0xff62FCD7),
-                ),
-              ),
-            ),
+            const CustomTextField(text: 'title'),
             SizedBox(
               height: 20.h,
             ),
-            TextFormField(
-                cursorColor: Kprimarycolor,
-                decoration: InputDecoration(
-                    hintText: 'content',
-                    hintStyle: TextStyle(color: Kprimarycolor),
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 50.h, horizontal: 10.w),
-                    border: buildBorder(),
-                    enabledBorder: buildBorder(),
-                    focusedBorder: buildBorder(Kprimarycolor))),
+            CustomTextField(
+              text: 'content',
+              padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 10.w),
+            ),
             SizedBox(
               height: 90.h,
             ),
@@ -46,11 +29,5 @@ class AddNoteBottomSheet extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  OutlineInputBorder buildBorder([color]) {
-    return OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10.r),
-        borderSide: BorderSide(color: color ?? Colors.white));
   }
 }
