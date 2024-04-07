@@ -5,10 +5,13 @@ import 'package:noteapp/constant.dart';
 import 'package:noteapp/views/edit_notes_view.dart';
 import 'package:noteapp/views/notes_view.dart';
 
+import 'models/note_model.dart';
+
 void main() async {
   runApp(const NoteApp());
   await Hive.initFlutter();
   await Hive.openBox(kNotesBox);
+  Hive.registerAdapter(NoteModelAdapter());
 }
 
 class NoteApp extends StatelessWidget {
