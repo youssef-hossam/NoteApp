@@ -14,11 +14,11 @@ class EditNoteForm extends StatefulWidget {
 }
 
 class _EditNoteFormState extends State<EditNoteForm> {
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  GlobalKey<FormState> formstate = GlobalKey();
+  String? title, subtitle;
   @override
   Widget build(BuildContext context) {
-    AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-    GlobalKey<FormState> formstate = GlobalKey();
-    String? title, subtitle;
     return Form(
       key: formstate,
       child: Padding(
@@ -28,7 +28,7 @@ class _EditNoteFormState extends State<EditNoteForm> {
             SizedBox(
               height: 30.h,
             ),
-            CustomAppBar(icon: Icons.check),
+            const CustomAppBar(icon: Icons.check),
             SizedBox(
               height: 30.h,
             ),
