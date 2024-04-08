@@ -4,16 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'custom_appbar.dart';
 import 'custom_textfield.dart';
 
-class AddNoteForm extends StatefulWidget {
-  const AddNoteForm({
+class EditNoteForm extends StatefulWidget {
+  const EditNoteForm({
     super.key,
   });
 
   @override
-  State<AddNoteForm> createState() => _AddNoteFormState();
+  State<EditNoteForm> createState() => _EditNoteFormState();
 }
 
-class _AddNoteFormState extends State<AddNoteForm> {
+class _EditNoteFormState extends State<EditNoteForm> {
   @override
   Widget build(BuildContext context) {
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
