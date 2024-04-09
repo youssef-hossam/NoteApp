@@ -6,11 +6,13 @@ import '../constant.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
-    required this.text,
+    this.text,
     this.onTap,
+    this.isloading = false,
   });
   final Function()? onTap;
-  final String text;
+  final String? text;
+  final bool isloading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -23,10 +25,18 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.r),
         ),
         child: Center(
-          child: Text(
-            text,
-            style: TextStyle(color: Colors.black, fontSize: 20.sp),
-          ),
+          child: isloading
+              ? const SizedBox(
+                  height: 20,
+                  width: 20,
+                  child: CircularProgressIndicator(
+                    color: Colors.black,
+                  ),
+                )
+              : Text(
+                  text!,
+                  style: TextStyle(color: Colors.black, fontSize: 20.sp),
+                ),
         ),
       ),
     );
