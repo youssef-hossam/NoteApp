@@ -21,7 +21,11 @@ class _AddNoteFormState extends State<AddNoteForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15.h, vertical: 30.h),
+      padding: EdgeInsets.only(
+          right: 15.h,
+          left: 15.h,
+          top: 30.h,
+          bottom: MediaQuery.of(context).viewInsets.bottom),
       child: Form(
         key: formstate,
         child: Column(
@@ -67,7 +71,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
                   },
                 );
               },
-            )
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
           ],
         ),
       ),
