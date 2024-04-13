@@ -8,6 +8,7 @@ import 'package:noteapp/simple_observer.dart';
 import 'package:noteapp/views/edit_notes_view.dart';
 import 'package:noteapp/views/notes_view.dart';
 
+import 'cubits/notes_cubit/notes_cubit.dart';
 import 'models/note_model.dart';
 
 void main() async {
@@ -27,11 +28,14 @@ class NoteApp extends StatelessWidget {
       splitScreenMode: true,
       minTextAdapt: true,
       designSize: const Size(360, 690),
-      child: MaterialApp(
-        theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
-        debugShowCheckedModeBanner: false,
-        home: const NotesView(),
-        routes: {EditNotesView.id: (context) => const EditNotesView()},
+      child: BlocProvider(
+        create: (context) => NotesCubit(),
+        child: MaterialApp(
+          theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
+          debugShowCheckedModeBanner: false,
+          home: const NotesView(),
+          routes: {},
+        ),
       ),
     );
   }

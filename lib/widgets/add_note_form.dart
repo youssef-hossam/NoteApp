@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 import 'package:noteapp/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:noteapp/models/note_model.dart';
 
@@ -22,10 +23,11 @@ class _AddNoteFormState extends State<AddNoteForm> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-          right: 15.h,
-          left: 15.h,
-          top: 30.h,
-          bottom: MediaQuery.of(context).viewInsets.bottom),
+        right: 15.h,
+        left: 15.h,
+        top: 30.h,
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+      ),
       child: Form(
         key: formstate,
         child: Column(
@@ -57,9 +59,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
                   onTap: () {
                     if (formstate.currentState!.validate()) {
                       formstate.currentState!.save();
+
+                      var date = DateTime.now();
+                      var formateddate = DateFormat('dd-mm-yyyy').format(date);
                       NoteModel noteModel = NoteModel(
                           color: Colors.red.value,
-                          date: DateTime.now().toString(),
+                          date: formateddate.toString(),
                           subtitle: subtitle!,
                           title: title!);
                       BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
