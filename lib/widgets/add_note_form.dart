@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:noteapp/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:noteapp/models/note_model.dart';
 
+import 'colors_list_view.dart';
 import 'custom_button.dart';
 import 'custom_textfield.dart';
 
@@ -19,6 +20,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
   GlobalKey<FormState> formstate = GlobalKey();
   String? title, subtitle;
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  List<Color> NoteColors = [
+    Color(0xffDB504A),
+    Color.fromARGB(255, 46, 15, 1),
+    Color(0xff43AA8B),
+    Color(0xffB2B09B),
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,6 +58,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
             SizedBox(
               height: 20.h,
             ),
+            ColorListView(),
+            SizedBox(
+              height: 20.h,
+            ),
             BlocBuilder<AddNoteCubit, AddNoteState>(
               builder: (context, state) {
                 return CustomButton(
@@ -63,11 +74,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       var date = DateTime.now();
                       var formateddate = DateFormat('dd-mm-yyyy').format(date);
                       NoteModel noteModel = NoteModel(
-                          color: Colors.red.value,
+                          color: Colors.blue.value,
                           date: formateddate.toString(),
                           subtitle: subtitle!,
                           title: title!);
                       BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+
                       setState(() {});
                     } else {
                       autovalidateMode = AutovalidateMode.always;
