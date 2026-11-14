@@ -1,0 +1,7 @@
+# Keep GitHub language stats focused on Dart (platform runner code is generated)
+android/** linguist-vendored
+ios/** linguist-vendored
+linux/** linguist-vendored
+macos/** linguist-vendored
+windows/** linguist-vendored
+web/** linguist-vendored
