@@ -1,19 +1,48 @@
-# noteapp
+<h1 align="center">📝 Notes</h1>
 
-A new Flutter project.
+<p align="center">
+  A lightweight, <b>offline-first</b> notes app — create, edit, colour and delete notes, all stored locally with <b>Hive</b>.
+</p>
 
-## Getting Started
+<p align="center">
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter"/>
+  <img src="https://img.shields.io/badge/Hive-local%20DB-FF6B2C?style=flat-square" alt="Hive"/>
+  <img src="https://img.shields.io/badge/State-Cubit-21B18F?style=flat-square" alt="Cubit"/>
+</p>
 
-This project is a starting point for a Flutter application.
+<p align="center">
+  <img src="screenshots/showcase.webp" alt="Notes app screenshots" width="100%"/>
+</p>
 
-A few resources to get you started if this is your first Flutter project:<img width="1080" height="2220" alt="Screenshot_1711845347" src="https://github.com/user-attachments/assets/8be7b4be-d5cf-44a2-84d0-024ce0b3ff6f" />
-<img width="1080" height="2220" alt="Screenshot_1712654954" src="https://github.com/user-attachments/assets/c7e5ff57-2c26-4108-be8c-d31d4bb36101" />
-<img width="1080" height="2220" alt="Screenshot_1711848351" src="https://github.com/user-attachments/assets/a9213e16-3679-4c45-96bd-63a81a1ac0af" />
+## ✨ Features
 
+- ➕ Add a note from a bottom sheet with title, content and a **colour picker**.
+- ✏️ Edit any note, 🗑️ delete it with one tap.
+- 📅 Each note keeps its creation date (formatted with `intl`).
+- 💾 Works **fully offline** — data persists in a Hive box, no internet needed.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🏗️ How it's built
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+lib/
+├── cubits/
+│   ├── add_note_cubit/   # validates & saves a new note
+│   └── notes_cubit/      # loads / refreshes the notes list
+├── models/               # NoteModel + generated Hive TypeAdapter
+├── views/                # notes list & edit screens
+└── widgets/              # app bar, note item, colour list, forms…
+```
+
+- **State management:** Cubit (`flutter_bloc`) with a `BlocObserver` for logging.
+- **Local storage:** `hive` + `hive_flutter` with a generated `TypeAdapter`.
+
+## 🚀 Run it
+
+```bash
+flutter pub get
+flutter run
+```
+
+---
+
+<p align="center">Made with ❤️ by <a href="https://github.com/youssef-hossam">Youssef Hadwa</a></p>
