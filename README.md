@@ -11,8 +11,14 @@
 </p>
 
 <p align="center">
-  <img src="screenshots/showcase.webp" alt="Notes app screenshots" width="100%"/>
+  <img src="screenshots/hero.webp" alt="Notes app" width="100%"/>
 </p>
+
+## 📱 Screens
+
+| Notes | Add note | Notes list |
+|:-:|:-:|:-:|
+| <img src="screenshots/2.webp" width="200"/> | <img src="screenshots/1.webp" width="200"/> | <img src="screenshots/3.webp" width="200"/> |
 
 ## ✨ Features
 
